@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.tree ul{
+			list-style-type: none;
+		}
+		.tree li ul{
+			margin-left: 20px;
+		}
+		.tree .has-child>ul{
+			display:none;
+		}
+		.tree ul li{
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+	<body>
+		<div class="tree">
+			<h3>Archives</h3>
+			<ul>
+				<li class="has-child">
+					<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Parent 1</a>
+					<ul>
+						<li class="has-child">
+							<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Child 1</a>
+							<ul>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="">Grand Child</a></li>
+							</ul>
+						</li>
+						<li class="has-child">
+							<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Child 2</a>
+							<ul>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="">Grand Child</a></li>
+							</ul>
+						</li>
+						<li class="has-child">
+							<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Child 3</a>
+							<ul>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="">Grand Child</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="has-child">
+					<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Parent 1</a>
+					<ul>
+						<li class="has-child">
+							<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Child 1</a>
+							<ul>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="">Grand Child</a></li>
+							</ul>
+						</li>
+						<li class="has-child">
+							<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Child 2</a>
+							<ul>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="">Grand Child</a></li>
+							</ul>
+						</li>
+						<li class="has-child">
+							<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Child 3</a>
+							<ul>
+								<li><i class="fa fa-caret-right" aria-hidden="true"></i> <a href="">Grand Child</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>			
+				<li>
+					<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Parent 3</a>
+				</li>				
+				<li>
+					<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Parent 4</a>
+				</li>				
+				<li>
+					<i class="fa fa-caret-right" aria-hidden="true"></i> <a href="#">Parent 5</a>
+				</li>				
+			</ul>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function(){
+				$(".tree .has-child>a").on('click', function(event) {
+					event.preventDefault();
+					$(this).siblings("i").toggleClass('fa-rotate-90');
+					$(this).siblings("ul").slideToggle();
+				});
+			});
+		</script>
+	</body>
+</html>
+
+					
